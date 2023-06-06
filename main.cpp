@@ -4,8 +4,11 @@
 #include<vector>
 #include<thread>
 #include<ctime>
-#include<Windows.h>
+// #include<Windows.h>
+#include<unistd.h>
 #include"cc_occ.h"
+#include"cc_occ.h" 
+#include"data_occ.h"
 
 using namespace std;
 
@@ -192,7 +195,7 @@ RC transaction3(cc_occ& ccOCC){
 time_t get_ts() {
 	latch.lock();
 	time_t ts = time(0);
-	Sleep(100);
+	sleep(1);
 	latch.unlock();
 	return ts;
 }
